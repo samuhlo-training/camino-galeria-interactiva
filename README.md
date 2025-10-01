@@ -1,6 +1,8 @@
-# 🗺️ Mapa Interactivo del Camino de Santiago
+# 🗺️ PRE-MVP - Mapa Interactivo del Camino de Santiago
 
-Un mapa interactivo que documenta mi experiencia en el Camino de Santiago desde Sarria hasta Palas de Rei, con 64 puntos fotográficos y reflexiones personales.
+Un mapa interactivo que pretende documentar mi experiencia en el Camino de Santiago desde Sarria hasta Palas de Rei, con 64 puntos fotográficos y reflexiones personales.
+Estos puntos fotograficos fueron sacados de los metadatos de las fotos que he tomado en el camino, y las reflexiones personales son generadas por IA.
+La idea principal, es que subiendo las fotos, se pueda generar un mapa interactivo personalizabe automaticamente.
 
 ## 🎯 Características
 
@@ -8,34 +10,17 @@ Un mapa interactivo que documenta mi experiencia en el Camino de Santiago desde 
 - 📍 64 marcadores personalizados con fotos del camino
 - 🛤️ Línea de ruta conectando todos los puntos
 - 🖼️ Modal con detalles de cada foto (imagen, título, ubicación, reflexión, tags)
+- 🔍 **Zoom en imágenes** - Click para ver a tamaño completo
+- ⬅️➡️ **Navegación entre fotos** - Botones y teclado (← →)
 - 📱 Diseño responsive
 - 🎨 Interfaz moderna con Tailwind CSS
 - ⚡ Construido con Vite y Preact
-
-## 🏗️ Arquitectura
-
-Este proyecto sigue los principios de **Screaming Architecture**, donde la estructura del código refleja claramente el propósito de la aplicación.
-
-```
-src/
-├── app/                    # Aplicación principal
-├── features/               # Características principales
-│   ├── map/               # Feature: Mapa interactivo
-│   └── photos/            # Feature: Galería de fotos
-├── shared/                # Recursos compartidos
-└── core/                  # Lógica de negocio central
-```
-
-Para más detalles sobre la arquitectura, consulta:
-- 📖 [ESTRUCTURA.md](./ESTRUCTURA.md) - Estructura completa del proyecto
-- 🏗️ [ARQUITECTURA_VISUAL.md](./ARQUITECTURA_VISUAL.md) - Diagramas y explicación visual
-- 📝 [GUIA_IMPLEMENTACION.md](./GUIA_IMPLEMENTACION.md) - Guía de implementación paso a paso
 
 ## 🚀 Inicio Rápido
 
 ### Prerrequisitos
 
-- Node.js 18+ 
+- Node.js 18+
 - npm o yarn
 
 ### Instalación
@@ -48,7 +33,7 @@ git clone <tu-repo>
 npm install
 
 # Copiar tus imágenes a public/images/camino/
-# (Ver estructura en public/images/camino/README.md)
+# (Las imágenes ya están incluidas en este proyecto)
 
 # Iniciar servidor de desarrollo
 npm run dev
@@ -64,29 +49,17 @@ npm run preview  # Vista previa del build de producción
 
 ## 📂 Estructura del Proyecto
 
-### Features
+El proyecto sigue una estructura modular y organizada (Screaming Architecture) con las siguientes carpetas:
 
-#### 🗺️ Map (Mapa)
-Gestiona todo lo relacionado con el mapa interactivo:
-- `components/` - Componentes visuales del mapa
-- `containers/` - Componentes con lógica
-- `config/` - Configuración de Leaflet
-- `data/` - Datos de los 64 puntos fotográficos
-
-#### 📸 Photos (Fotos)
-Gestiona la visualización de fotos y detalles:
-- `components/` - Modal y contenido de fotos
-- `containers/` - Lógica de la galería
-
-### Shared
-Recursos reutilizables:
-- `components/` - Componentes UI compartidos
-- `hooks/` - Hooks personalizados (ej: useModal)
-- `styles/` - Estilos globales
-
-## 📋 Checklist de Implementación
-
-Sigue el [CHECKLIST.md](./CHECKLIST.md) para implementar el proyecto paso a paso.
+```
+src/
+├── app/                    # Aplicación principal
+├── features/               # Características principales
+│   ├── map/               # Feature: Mapa interactivo
+│   └── photos/            # Feature: Galería de fotos
+├── shared/                # Recursos compartidos
+└── core/                  # Lógica de negocio central
+```
 
 ## 🛠️ Tecnologías
 
@@ -99,6 +72,7 @@ Sigue el [CHECKLIST.md](./CHECKLIST.md) para implementar el proyecto paso a paso
 ## 📸 Datos
 
 Los datos de los 64 puntos fotográficos incluyen:
+
 - Coordenadas GPS (lat, lon)
 - Imagen del punto
 - Título descriptivo
@@ -106,62 +80,38 @@ Los datos de los 64 puntos fotográficos incluyen:
 - Reflexión personal
 - Tags temáticos
 
-## 🎨 Estilos
+## 🎮 Controles
 
-El proyecto utiliza:
-- **Tailwind CSS** para estilos de utilidad
-- **CSS personalizado** para componentes específicos de Leaflet
-- **Animaciones** suaves con transiciones CSS
+### Navegación
+
+- **Click en marcador** → Abre modal con detalles
+- **Botones ← →** → Cambiar entre fotos
+- **Teclado ← →** → Navegación rápida
+- **Esc** → Cerrar modal
+
+### Imágenes
+
+- **Click en imagen** → Zoom a pantalla completa
+- **Click en zoom** → Volver al modal
 
 ## 📱 Responsive
 
 El diseño se adapta a:
+
 - 📱 Móviles (< 768px)
 - 📱 Tablets (768px - 1024px)
 - 💻 Desktop (> 1024px)
 
-## 🔧 Configuración
+## 📝 Estado del Proyecto
 
-### Tailwind
-Configuración en `tailwind.config.js`
+**Este es un pre-MVP** - Versión básica funcional con las características principales implementadas para mostrar la idea:
 
-### PostCSS
-Configuración en `postcss.config.js`
-
-### Vite
-Configuración en `vite.config.js`
-
-## 📚 Documentación Adicional
-
-- [ESTRUCTURA.md](./ESTRUCTURA.md) - Estructura detallada de carpetas
-- [ARQUITECTURA_VISUAL.md](./ARQUITECTURA_VISUAL.md) - Diagramas de arquitectura
-- [GUIA_IMPLEMENTACION.md](./GUIA_IMPLEMENTACION.md) - Guía de implementación
-- [CHECKLIST.md](./CHECKLIST.md) - Checklist de tareas
-- [ARCHIVOS_CREADOS.md](./ARCHIVOS_CREADOS.md) - Lista de archivos del proyecto
-
-## 🤝 Contribuir
-
-Este es un proyecto personal, pero si quieres usarlo como base para tu propio mapa del Camino:
-
-1. Fork el proyecto
-2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📝 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
-## 👤 Autor
-
-Tu nombre - [@tu_twitter](https://twitter.com/tu_twitter)
-
-## 🙏 Agradecimientos
-
-- A todos los peregrinos que comparten el Camino
-- A la comunidad de Leaflet por la excelente librería
-- A los creadores de Preact y Vite
+- ✅ Mapa interactivo básico
+- ✅ 64 puntos fotográficos
+- ✅ Modal con detalles de fotos
+- ✅ Navegación entre fotos
+- ✅ Zoom en imágenes
+- ✅ Diseño responsive básico
 
 ---
 
