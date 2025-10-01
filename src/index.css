@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Variables CSS para el tema vintage del Camino */
+:root {
+  /* Colores vintage */
+  --color-pergamino: #F5E6D3;
+  --color-oro-viejo: #D4A574;
+  --color-marron: #8B4513;
+  --color-marron-oscuro: #3E2723;
+  --color-dorado: #DAA520;
+  
+  /* Tipografía */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  font-weight: 400;
+  
+  /* Renderizado */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #F5E6D3;
+  color: #3E2723;
+}
+
+/* Contenedor principal de la app */
+#app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Scrollbar personalizado global */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8D5B7;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B4513;
+  border-radius: 5px;
+  border: 2px solid #E8D5B7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5D4037;
+}
+
+/* Utilidades adicionales */
+.prose {
+  max-width: 65ch;
+}
+
+.prose p {
+  margin-bottom: 1em;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Enlaces */
+a {
+  color: var(--color-marron);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-dorado);
+}
